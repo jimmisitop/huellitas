@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Cuidados básicos del perro",
+    "source": "ASPCA",
+    "url": "https://www.aspca.org/pet-care/dog-care/general-dog-care"
+  },
+  {
+    "id": 2,
+    "title": "Nutrición felina",
+    "source": "Royal Canin",
+    "url": "https://www.royalcanin.com/es/productos/gato/nutrition"
+  },
+  {
+    "id": 3,
+    "title": "Salud y bienestar de mascotas",
+    "source": "PetMD",
+    "url": "https://www.petmd.com/"
+  },
+  {
+    "id": 4,
+    "title": "Entrenamiento de perros",
+    "source": "Humane Society",
+    "url": "https://www.humanesociety.org/resources/training-your-dog"
+  },
+  {
+    "id": 5,
+    "title": "Cuidados del gato",
+    "source": "ASPCA",
+    "url": "https://www.aspca.org/pet-care/cat-care/general-cat-care"
+  },
+  {
+    "id": 6,
+    "title": "Aves como mascotas",
+    "source": "The Spruce Pets",
+    "url": "https://www.thesprucepets.com/bird-care-4706747"
+  },
+  {
+    "id": 7,
+    "title": "Vacunación de mascotas",
+    "source": "VCA Hospitals",
+    "url": "https://vcahospitals.com/know-your-pet/vaccination-guidelines-for-dogs-and-cats"
+  },
+  {
+    "id": 8,
+    "title": "Problemas dentales en perros",
+    "source": "WebMD Pets",
+    "url": "https://pets.webmd.com/dogs/dental-health-dogs"
+  }
+]

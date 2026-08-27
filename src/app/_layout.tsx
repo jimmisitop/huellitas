@@ -1,18 +1,40 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useColorScheme } from 'react-native';
+import { useEffect } from "react";
+import { ActivityIndicator, View } from "react-native";
+import { Slot, useRouter, useSegments } from "expo-router";
+import { useAuthStore } from "../store/useAuthStore";
+import "../../global.css";
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
+export default function RootLayout() {
+  const { user, isInitialized, initialize } = useAuthStore();
+  const router = useRouter();
+  const segments = useSegments();
 
-SplashScreen.preventAutoHideAsync();
+  useEffect(() => {
+    const unsubscribe = initialize();
+    return unsubscribe;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
-  );
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    const inAuthGroup = segments[0]?.includes("auth") ?? false;
+
+    if (!user && !inAuthGroup) {
+      router.replace("/(auth)/login" as any);
+    } else if (user && inAuthGroup) {
+      router.replace("/(tabs)" as any);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, isInitialized, segments]);
+
+  if (!isInitialized) {
+    return (
+      <View className="flex-1 bg-white justify-center items-center">
+        <ActivityIndicator size="large" color="#2448C5" />
+      </View>
+    );
+  }
+
+  return <Slot />;
 }

@@ -1,26 +1,34 @@
 /**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
+ * Paleta de colores Huellitas — sincronizada con tailwind.config.js
  */
-
-import '@/global.css';
 
 import { Platform } from 'react-native';
 
+// Colores de marca
+const primary = '#2448C5';    // Azul principal
+const secondary = '#D6F014';  // Lima/amarillo vibrante
+const accent = '#813A8E';     // Púrpura acento
+
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    text: '#1A1A2E',
+    background: '#FFFFFF',
+    backgroundElement: '#F0F3FA',
+    backgroundSelected: '#E1E8F5',
+    textSecondary: '#6B7280',
+    primary,
+    secondary,
+    accent,
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    text: '#F8FAFC',
+    background: '#0F172A',
+    backgroundElement: '#1E293B',
+    backgroundSelected: '#334155',
+    textSecondary: '#94A3B8',
+    primary,
+    secondary,
+    accent,
   },
 } as const;
 
